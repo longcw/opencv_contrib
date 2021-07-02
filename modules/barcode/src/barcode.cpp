@@ -161,8 +161,8 @@ BarcodeDetector::BarcodeDetector(const string &prototxt_path, const string &mode
 {
     if (!prototxt_path.empty() && !model_path.empty())
     {
-        CV_Assert(utils::fs::exists(prototxt_path));
-        CV_Assert(utils::fs::exists(model_path));
+        // CV_Assert(utils::fs::exists(prototxt_path));
+        // CV_Assert(utils::fs::exists(model_path));
         p->sr = std::make_shared<SuperScale>();
         int res = p->sr->init(prototxt_path, model_path);
         CV_Assert(res == 0);

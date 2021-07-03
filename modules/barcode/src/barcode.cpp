@@ -15,6 +15,16 @@
 namespace cv {
 namespace barcode {
 
+std::vector<string> getBarcodeTypeNames(const std::vector<BarcodeType> &barcode_types) {
+    std::vector<string> names(barcode_types.size());
+    for (size_t i = 0; i< barcode_types.size(); i++) {
+        std::stringstream ss;
+        ss << barcode_types[i];
+        names[i] = ss.str();
+    }
+    return names;
+}
+
 static bool checkBarInputImage(InputArray img, Mat &gray)
 {
     CV_Assert(!img.empty());

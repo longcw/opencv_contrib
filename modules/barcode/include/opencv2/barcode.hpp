@@ -8,6 +8,7 @@
 
 #include <opencv2/core.hpp>
 #include <ostream>
+#include <sstream>
 
 /** @defgroup barcode Barcode detecting and decoding methods
 */
@@ -47,6 +48,8 @@ static inline std::ostream &operator<<(std::ostream &out, const BarcodeType &bar
     }
     return out;
 }
+
+CV_EXPORTS_W std::vector<std::string> getBarcodeTypeNames(const std::vector<BarcodeType> &barcode_types);
 
 class CV_EXPORTS_W BarcodeDetector
 {
